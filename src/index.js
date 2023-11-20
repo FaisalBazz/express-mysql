@@ -15,7 +15,7 @@ const bucket = storage.bucket('express-storage-1'); // Ganti dengan nama bucket 
 const multerStorage = multer.memoryStorage();
 const upload = multer({ storage: multerStorage });
 
-app.post('/upload', upload.single('image'), (req, res) => {
+app.post('/upload', upload.single('photo'), (req, res) => {
   const file = req.file;
   const fileName = `${Date.now()}_${file.originalname}`;
 
