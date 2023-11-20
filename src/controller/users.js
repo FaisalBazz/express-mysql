@@ -1,14 +1,12 @@
 const UserModel = require('../models/users')
 
-const getAllUsers = (req, res) => {
+const getAllUsers = async (req, res) => {
     try {
+        const [data] = await UserModel.getAllUsers();
+        
         res.json({
             message: 'GET all users success',
-            data: {
-                "name": "faisal",
-                "email": "faisal@gmail.com",
-                "address": "Bandung"
-            }
+            data: data
         })
     } catch (error) {
         res.status(500).json({
