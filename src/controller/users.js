@@ -1,8 +1,13 @@
 const UserModel = require('../models/users')
 
-const getAllUsers = async (req, res) => {
+const getAllUsers =  (req, res) => {
     try {
-        const [data] = await UserModel.getAllUsers();
+        const data = {
+            "id": 1,
+            "name": "Faisal",
+            "email": "faisal@gmial.com",
+            "address": "Jakarta"
+        };
         
         res.json({
             message: 'GET all users success',
