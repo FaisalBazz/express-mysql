@@ -1,13 +1,13 @@
 const express = require('express');
 const multer = require('multer');
 const { Storage } = require('@google-cloud/storage');
-
+const path = require('path');
 const app = express();
 const port = 3000;
 
 const storage = new Storage({
   projectId: 'coba-cloud-405406', // Ganti dengan ID proyek Google Cloud Anda
-  keyFilename: './serviceaccountkey.json', // Ganti dengan path ke file kunci layanan Anda
+  keyFilename: Path.resolve('./serviceaccountkey.json'), // Ganti dengan path ke file kunci layanan Anda
 });
 
 const bucket = storage.bucket('express-storage-1'); // Ganti dengan nama bucket Anda
